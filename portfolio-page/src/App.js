@@ -55,13 +55,13 @@ function App() {
           left: `${cordX - 10}px`,
         }}
       ></div>
-      <div
+      {/* <div
         className="mouseTrail2"
         style={{
           top: `${cordY2 - 10}px`,
           left: `${cordY2 - 10}px`,
         }}
-      ></div>
+      ></div> */}
 
       <nav className="appNav">
         <h1>
