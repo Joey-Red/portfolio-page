@@ -10,8 +10,6 @@ function Projects(props) {
     setDisplayHome,
     displayProjects,
     setDisplayProjects,
-    displayContact,
-    setDisplayContact,
     displayAbout,
     setDisplayAbout,
   } = props;
@@ -20,7 +18,6 @@ function Projects(props) {
     maxHeight: "40vh",
     maxWidth: "50vw",
     display: "block",
-    // borderRadius: "12px",
     marginBottom: "10px",
   };
   let greenText = { color: "rgb(100, 216, 107)" };
@@ -37,25 +34,16 @@ function Projects(props) {
     if (displayHome) {
       setDisplayHome(false);
       setDisplayProjects(true);
-      setDisplayContact(false);
       setDisplayAbout(false);
     }
     if (displayProjects) {
       setDisplayHome(false);
       setDisplayProjects(false);
-      setDisplayContact(false);
       setDisplayAbout(true);
     }
     if (displayAbout) {
       setDisplayHome(false);
       setDisplayProjects(false);
-      setDisplayContact(true);
-      setDisplayAbout(false);
-    }
-    if (displayContact) {
-      setDisplayHome(true);
-      setDisplayProjects(false);
-      setDisplayContact(false);
       setDisplayAbout(false);
     }
   };
@@ -68,11 +56,6 @@ function Projects(props) {
               <div className="projectPage">
                 <button
                   className="nextButton projectNext"
-                  // style={{
-                  //   position: "absolute",
-                  //   left: "15%",
-                  //   top: "47%",
-                  // }}
                   onClick={() => nextPage()}
                 >
                   Next
@@ -80,7 +63,7 @@ function Projects(props) {
                 <div>
                   <h1>
                     Here are some of my projects that are currently live. Click
-                    on the gif to visit the page for a better look.
+                    on the video to visit the page for a better look.
                   </h1>
                 </div>
                 <div>
@@ -175,13 +158,13 @@ function Projects(props) {
                 </div>
                 <p style={description}>
                   This is the end of my live projects for now, more coming soon.
-                  Check my A minimalistic cv creator where you enter your
-                  information, needs
+                  Check my
                   <a
                     href="https://github.com/Joey-Red"
                     target="blank"
                     className="githubLink"
                   >
+                    {" "}
                     Github
                   </a>{" "}
                   to see what I'm up to right now!

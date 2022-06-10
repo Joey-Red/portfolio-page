@@ -8,14 +8,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Contact(props) {
+function About(props) {
   const {
     displayHome,
     setDisplayHome,
     displayProjects,
     setDisplayProjects,
-    displayContact,
-    setDisplayContact,
     setDisplayAbout,
     displayAbout,
   } = props;
@@ -23,28 +21,21 @@ function Contact(props) {
     if (displayHome) {
       setDisplayHome(false);
       setDisplayProjects(true);
-      setDisplayContact(false);
       setDisplayAbout(false);
     }
     if (displayProjects) {
       setDisplayHome(false);
       setDisplayProjects(false);
-      setDisplayContact(false);
       setDisplayAbout(true);
     }
     if (displayAbout) {
-      setDisplayHome(false);
-      setDisplayProjects(false);
-      setDisplayContact(true);
-      setDisplayAbout(false);
-    }
-    if (displayContact) {
       setDisplayHome(true);
       setDisplayProjects(false);
-      setDisplayContact(false);
       setDisplayAbout(false);
     }
   };
+  let greenText = { color: "rgb(100, 216, 107)" };
+
   return (
     <>
       {displayAbout ? (
@@ -89,7 +80,6 @@ function Contact(props) {
                 ></FontAwesomeIcon>{" "}
                 Git
               </div>
-              {/* <div></div> */}
             </div>
             <div className="aboutInner">
               <div className="aboutMeHeader">A little about me..</div>
@@ -107,11 +97,17 @@ function Contact(props) {
                 is Node, which I am starting soon.
                 <br />
                 <br />
+                <div style={{ fontSize: "1.3rem" }}>
+                  Thank you for visiting my page. If you would like to contact
+                  me, email{" "}
+                  <here style={greenText}>joeyedalrymple@gmail.com</here>
+                </div>
+                <br />
                 <button
                   className="nextButton returnHome"
                   onClick={() => nextPage()}
                 >
-                  Next
+                  Home
                 </button>
               </div>
             </div>
@@ -122,4 +118,4 @@ function Contact(props) {
   );
 }
 
-export default Contact;
+export default About;

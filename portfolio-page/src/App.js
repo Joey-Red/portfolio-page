@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Contact from "./Components/Contact";
+import React, { useState } from "react";
 import About from "./Components/About";
 import Home from "./Components/Home";
 import Projects from "./Components/Projects";
@@ -15,33 +14,23 @@ function App() {
   const [displayHome, setDisplayHome] = useState(true);
   const [displayProjects, setDisplayProjects] = useState(false);
   const [displayAbout, setDisplayAbout] = useState(false);
-  const [displayContact, setDisplayContact] = useState(false);
   const [cordX, setCordX] = useState([0]);
   const [cordY, setCordY] = useState([0]);
 
   let toggleHome = () => {
     setDisplayHome(true);
     setDisplayProjects(false);
-    setDisplayContact(false);
     setDisplayAbout(false);
   };
 
   let toggleProjects = () => {
     setDisplayHome(false);
     setDisplayProjects(true);
-    setDisplayContact(false);
-    setDisplayAbout(false);
-  };
-  let toggleContact = () => {
-    setDisplayHome(false);
-    setDisplayProjects(false);
-    setDisplayContact(true);
     setDisplayAbout(false);
   };
   let toggleAbout = () => {
     setDisplayHome(false);
     setDisplayProjects(false);
-    setDisplayContact(false);
     setDisplayAbout(true);
   };
   const activeTab = { color: "rgb(100,216,107)" };
@@ -86,13 +75,6 @@ function App() {
               <>About</>
             )}
           </button>
-          <button onClick={() => toggleContact()} className="toggleButton">
-            {displayContact ? (
-              <div style={activeTab}>&#x3c; Contact /&#x3e;</div>
-            ) : (
-              <>Contact</>
-            )}
-          </button>
           <div className="links" style={{ fontSize: "1.3rem" }}>
             <a href="https://github.com/Joey-Red">
               <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
@@ -112,8 +94,6 @@ function App() {
         setDisplayHome={setDisplayHome}
         displayProjects={displayProjects}
         setDisplayProjects={setDisplayProjects}
-        displayContact={displayContact}
-        setDisplayContact={setDisplayContact}
         setDisplayAbout={setDisplayAbout}
         displayAbout={displayAbout}
       />
@@ -122,8 +102,6 @@ function App() {
         setDisplayHome={setDisplayHome}
         displayProjects={displayProjects}
         setDisplayProjects={setDisplayProjects}
-        displayContact={displayContact}
-        setDisplayContact={setDisplayContact}
         setDisplayAbout={setDisplayAbout}
         displayAbout={displayAbout}
       />
@@ -132,18 +110,6 @@ function App() {
         setDisplayHome={setDisplayHome}
         displayProjects={displayProjects}
         setDisplayProjects={setDisplayProjects}
-        displayContact={displayContact}
-        setDisplayContact={setDisplayContact}
-        setDisplayAbout={setDisplayAbout}
-        displayAbout={displayAbout}
-      />
-      <Contact
-        displayHome={displayHome}
-        setDisplayHome={setDisplayHome}
-        displayProjects={displayProjects}
-        setDisplayProjects={setDisplayProjects}
-        displayContact={displayContact}
-        setDisplayContact={setDisplayContact}
         setDisplayAbout={setDisplayAbout}
         displayAbout={displayAbout}
       />

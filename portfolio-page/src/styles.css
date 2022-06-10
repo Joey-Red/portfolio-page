@@ -15,8 +15,7 @@ html {
   opacity: 0.8;
   box-shadow: 0px 0px 3px 3px black;
 }
-.homepage,
-.aboutPage {
+.homepage {
   background-color: #1d1d1d;
   height: calc(100vh - 90px);
   overflow: hidden;
@@ -206,5 +205,13 @@ h3 {
     position: fixed;
     top: 500px;
     left: 4%;
+  }
+}
+@media only screen and (max-width: 429px) {
+  .extra {
+    margin: 10px;
+  }
+  .aboutPage {
+    margin: 10px;
   }
 }

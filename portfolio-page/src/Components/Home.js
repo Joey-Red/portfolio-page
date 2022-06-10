@@ -6,8 +6,6 @@ function Home(props) {
     setDisplayHome,
     displayProjects,
     setDisplayProjects,
-    displayContact,
-    setDisplayContact,
     displayAbout,
     setDisplayAbout,
   } = props;
@@ -16,25 +14,16 @@ function Home(props) {
     if (displayHome) {
       setDisplayHome(false);
       setDisplayProjects(true);
-      setDisplayContact(false);
       setDisplayAbout(false);
     }
     if (displayProjects) {
       setDisplayHome(false);
       setDisplayProjects(false);
-      setDisplayContact(false);
       setDisplayAbout(true);
     }
     if (displayAbout) {
       setDisplayHome(true);
       setDisplayProjects(false);
-      setDisplayContact(true);
-      setDisplayAbout(false);
-    }
-    if (displayContact) {
-      setDisplayHome(true);
-      setDisplayProjects(false);
-      setDisplayContact(false);
       setDisplayAbout(false);
     }
   };
