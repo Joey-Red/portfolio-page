@@ -1,20 +1,64 @@
 import React from "react";
-import wheresPikachu from "./images/wPikachu.gif";
-import RedditClone from "./images/JoeDit.gif";
-import restPage from "./images/restPage.gif";
-import CvProject from "./images/cvproject.gif";
+import CvProject from "./videos/cv.mp4";
+import RedditClone from "./videos/RedditSample.mp4";
+import restPage from "./videos/RestPage.mp4";
+import wheresPikachu from "./videos/WheresPikachu.mp4";
+
 function Projects(props) {
-  const { displayProjects } = props;
+  const {
+    displayHome,
+    setDisplayHome,
+    displayProjects,
+    setDisplayProjects,
+    displayContact,
+    setDisplayContact,
+    displayAbout,
+    setDisplayAbout,
+  } = props;
   let styles = {
-    // minHeight: "300px",
     minWidth: "50vw",
     maxHeight: "40vh",
     maxWidth: "50vw",
     display: "block",
-    borderRadius: "12px",
+    // borderRadius: "12px",
     marginBottom: "10px",
   };
   let greenText = { color: "rgb(100, 216, 107)" };
+  let description = {
+    minWidth: "50vw",
+    maxHeight: "40vh",
+    maxWidth: "50vw",
+    fontSize: "18px",
+    color: "white",
+    fontWeight: "800",
+    textAlign: "center",
+  };
+  let nextPage = () => {
+    if (displayHome) {
+      setDisplayHome(false);
+      setDisplayProjects(true);
+      setDisplayContact(false);
+      setDisplayAbout(false);
+    }
+    if (displayProjects) {
+      setDisplayHome(false);
+      setDisplayProjects(false);
+      setDisplayContact(false);
+      setDisplayAbout(true);
+    }
+    if (displayAbout) {
+      setDisplayHome(false);
+      setDisplayProjects(false);
+      setDisplayContact(true);
+      setDisplayAbout(false);
+    }
+    if (displayContact) {
+      setDisplayHome(true);
+      setDisplayProjects(false);
+      setDisplayContact(false);
+      setDisplayAbout(false);
+    }
+  };
   return (
     <>
       {displayProjects ? (
@@ -22,27 +66,29 @@ function Projects(props) {
           <div className="projectPageContainer">
             {displayProjects ? (
               <div className="projectPage">
+                <button
+                  className="nextButton projectNext"
+                  // style={{
+                  //   position: "absolute",
+                  //   left: "15%",
+                  //   top: "47%",
+                  // }}
+                  onClick={() => nextPage()}
+                >
+                  Next
+                </button>
                 <div>
                   <h1>
-                    These are some of my projects that are currently live. Click
-                    on the gif to visit the page for a deeper look.
+                    Here are some of my projects that are currently live. Click
+                    on the gif to visit the page for a better look.
                   </h1>
                 </div>
                 <div>
-                  <h4>This is my Reddit project</h4>
-                  <p
-                    style={{
-                      minWidth: "50vw",
-                      maxHeight: "40vh",
-                      maxWidth: "50vw",
-                      fontSize: "18px",
-                      color: "white",
-                    }}
-                  >
+                  <p style={description}>
                     I created a clone of <here style={greenText}>Reddit</here>,
-                    with lots of features. You can vote on posts, create
+                    with lots of features. You can post, vote on posts, create
                     communities, visit user profiles to see their posts, visit
-                    communities to see community specific posts and more.
+                    communities and more.
                   </p>
                   <div className="display">
                     <a
@@ -50,7 +96,9 @@ function Projects(props) {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img
+                      <video
+                        autoPlay
+                        loop
                         src={RedditClone}
                         alt="Reddit Clone"
                         style={styles}
@@ -59,14 +107,22 @@ function Projects(props) {
                   </div>
                 </div>
                 <div>
-                  <h4>This is an i-Spy project with Pokemon!</h4>
+                  <p style={description}>
+                    This is my <here style={greenText}>iSpy</here> game where
+                    you find <here style={greenText}>Pokemon</here> listed as
+                    objectives. Once you catch them they are added to your found
+                    Pokemon, after you find all of them you can add your name to
+                    the highscores!
+                  </p>
                   <div className="display">
                     <a
                       href="https://joey-red.github.io/wheres-pikachu/"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img
+                      <video
+                        autoPlay
+                        loop
                         src={wheresPikachu}
                         alt="wheres waldo project"
                         style={styles}
@@ -75,14 +131,19 @@ function Projects(props) {
                   </div>
                 </div>
                 <div>
-                  <h4>This is a Restaurant Page</h4>
+                  <p style={description}>
+                    A standard restaurant page with tabs displaying the
+                    information needed.
+                  </p>
                   <div className="display">
                     <a
                       href="https://joey-red.github.io/restaurant-page/"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img
+                      <video
+                        autoPlay
+                        loop
                         src={restPage}
                         alt="restaurant page"
                         style={styles}
@@ -91,17 +152,40 @@ function Projects(props) {
                   </div>
                 </div>
                 <div>
-                  <h4>This is a CV Creator.</h4>
+                  <p style={description}>
+                    A minimalistic <here style={greenText}>cv creator</here>{" "}
+                    where you enter your information, needs proper inputs, and
+                    you can edit your information.
+                  </p>
                   <div className="display" style={{ marginBottom: "40px" }}>
                     <a
                       href="https://joey-red.github.io/cv-project/"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={CvProject} alt="cv creator" style={styles} />
+                      <video
+                        autoPlay
+                        loop
+                        src={CvProject}
+                        alt="cv creator"
+                        style={styles}
+                      />
                     </a>
                   </div>
                 </div>
+                <p style={description}>
+                  This is the end of my live projects for now, more coming soon.
+                  Check my A minimalistic cv creator where you enter your
+                  information, needs
+                  <a
+                    href="https://github.com/Joey-Red"
+                    target="blank"
+                    className="githubLink"
+                  >
+                    Github
+                  </a>{" "}
+                  to see what I'm up to right now!
+                </p>
               </div>
             ) : (
               <></>

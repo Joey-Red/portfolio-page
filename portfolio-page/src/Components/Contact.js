@@ -1,47 +1,53 @@
 import React from "react";
 
 function Contact(props) {
-  const { displayContact } = props;
+  const {
+    displayHome,
+    setDisplayHome,
+    displayProjects,
+    setDisplayProjects,
+    displayContact,
+    setDisplayContact,
+    displayAbout,
+    setDisplayAbout,
+  } = props;
+  let nextPage = () => {
+    if (displayHome) {
+      setDisplayHome(false);
+      setDisplayProjects(true);
+      setDisplayContact(false);
+      setDisplayAbout(false);
+    }
+    if (displayProjects) {
+      setDisplayHome(false);
+      setDisplayProjects(false);
+      setDisplayContact(false);
+      setDisplayAbout(true);
+    }
+    if (displayAbout) {
+      setDisplayHome(true);
+      setDisplayProjects(false);
+      setDisplayContact(true);
+      setDisplayAbout(false);
+    }
+    if (displayContact) {
+      setDisplayHome(true);
+      setDisplayProjects(false);
+      setDisplayContact(false);
+      setDisplayAbout(false);
+    }
+  };
   return (
     <>
       {displayContact ? (
         <>
-          <div className="contactPage">
-            <div className="extra"></div>
-            <div className="contactInner">
-              <label htmlFor="name">
-                Name
-                <input
-                  type="text"
-                  placeholder="Name"
-                  id="email"
-                  name="name"
-                  required
-                />
-              </label>
-              <label htmlFor="email" type="email">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  required
-                />
-              </label>
-              <label htmlFor="message" type="text">
-                Message
-                <input
-                  type="text"
-                  placeholder="Message"
-                  name="text"
-                  id="text"
-                />
-              </label>
-            </div>
-          </div>
+          <button className="nextButton returnHome" onClick={() => nextPage()}>
+            Home
+          </button>
         </>
-      ) : null}
+      ) : (
+        <></>
+      )}
     </>
   );
 }
