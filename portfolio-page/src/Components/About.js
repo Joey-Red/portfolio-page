@@ -7,6 +7,7 @@ import {
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import firebaseLogo from "./img/firebaselogo2.svg";
 
 function About(props) {
   const {
@@ -50,6 +51,14 @@ function About(props) {
                     className="faColor"
                   ></FontAwesomeIcon>{" "}
                   ReactJS
+                </div>
+                <div className="faContainer">
+                  <img
+                    src={firebaseLogo}
+                    alt="google firebase"
+                    style={{ maxHeight: "20.8px" }}
+                  />{" "}
+                  Firebase
                 </div>
                 <div className="faContainer">
                   <FontAwesomeIcon
