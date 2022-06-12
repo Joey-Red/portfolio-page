@@ -9,6 +9,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import sync from "css-animation-sync";
 
 function App() {
   const [displayHome, setDisplayHome] = useState(true);
@@ -16,7 +17,7 @@ function App() {
   const [displayAbout, setDisplayAbout] = useState(false);
   const [cordX, setCordX] = useState([0]);
   const [cordY, setCordY] = useState([0]);
-
+  sync("gradient");
   let toggleHome = () => {
     setDisplayHome(true);
     setDisplayProjects(false);
