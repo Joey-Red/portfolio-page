@@ -37,7 +37,7 @@ function Home(props) {
                 <div className="homepageLeft">
                   <div>
                     {" "}
-                    <here style={greenText}>Hello,</here> my Name is
+                    <span style={greenText}>Hello,</span> my Name is
                   </div>
                   <h2>Joey Dalrymple</h2>
                 </div>

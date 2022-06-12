@@ -109,7 +109,7 @@ function About(props) {
                 <div style={{ fontSize: "1.3rem" }}>
                   Thank you for visiting my page. If you would like to contact
                   me, email{" "}
-                  <here style={greenText}>joeyedalrymple@gmail.com</here>
+                  <span style={greenText}>joeyedalrymple@gmail.com</span>
                 </div>
                 <br />
                 <button

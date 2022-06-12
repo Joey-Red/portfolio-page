@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CvProject from "./videos/cv.mp4";
 import RedditClone from "./videos/RedditSample.mp4";
 import restPage from "./videos/RestPage.mp4";
@@ -13,6 +13,7 @@ function Projects(props) {
     displayAbout,
     setDisplayAbout,
   } = props;
+  const [videoLoaded, setVideoLoaded] = useState(false);
   let styles = {
     minWidth: "50vw",
     maxHeight: "40vh",
@@ -47,6 +48,9 @@ function Projects(props) {
       setDisplayAbout(false);
     }
   };
+  const onLoadedData = () => {
+    setVideoLoaded(true);
+  };
   return (
     <>
       {displayProjects ? (
@@ -68,49 +72,57 @@ function Projects(props) {
                 </div>
                 <div>
                   <p style={description}>
-                    I created a clone of <here style={greenText}>Reddit</here>,
+                    I created a clone of <span style={greenText}>Reddit</span>,
                     with lots of features. You can post, vote on posts, create
                     communities, visit user profiles to see their posts, visit
                     communities and more.
                   </p>
                   <div className="display">
-                    <a
-                      href="https://joey-red.github.io/website-clone/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <video
-                        autoPlay
-                        loop
-                        src={RedditClone}
-                        alt="Reddit Clone"
-                        style={styles}
-                      />
-                    </a>
+                    {onLoadedData ? (
+                      <a
+                        href="https://joey-red.github.io/website-clone/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <video
+                          autoPlay
+                          loop
+                          src={RedditClone}
+                          alt="Reddit Clone"
+                          style={styles}
+                        />
+                      </a>
+                    ) : (
+                      <> Project is loading :)</>
+                    )}
                   </div>
                 </div>
                 <div>
                   <p style={description}>
-                    This is my <here style={greenText}>iSpy</here> game where
-                    you find <here style={greenText}>Pokemon</here> listed as
+                    This is my <span style={greenText}>iSpy</span> game where
+                    you find <span style={greenText}>Pokemon</span> listed as
                     objectives. Once you catch them they are added to your found
                     Pokemon, after you find all of them you can add your name to
                     the highscores!
                   </p>
                   <div className="display">
-                    <a
-                      href="https://joey-red.github.io/wheres-pikachu/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <video
-                        autoPlay
-                        loop
-                        src={wheresPikachu}
-                        alt="wheres waldo project"
-                        style={styles}
-                      />
-                    </a>
+                    {onLoadedData ? (
+                      <a
+                        href="https://joey-red.github.io/wheres-pikachu/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <video
+                          autoPlay
+                          loop
+                          src={wheresPikachu}
+                          alt="wheres waldo project"
+                          style={styles}
+                        />
+                      </a>
+                    ) : (
+                      <> Project is loading :)</>
+                    )}
                   </div>
                 </div>
                 <div>
@@ -119,41 +131,49 @@ function Projects(props) {
                     information needed.
                   </p>
                   <div className="display">
-                    <a
-                      href="https://joey-red.github.io/restaurant-page/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <video
-                        autoPlay
-                        loop
-                        src={restPage}
-                        alt="restaurant page"
-                        style={styles}
-                      />
-                    </a>
+                    {onLoadedData ? (
+                      <a
+                        href="https://joey-red.github.io/restaurant-page/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <video
+                          autoPlay
+                          loop
+                          src={restPage}
+                          alt="restaurant page"
+                          style={styles}
+                        />
+                      </a>
+                    ) : (
+                      <> Project is loading :)</>
+                    )}
                   </div>
                 </div>
                 <div>
                   <p style={description}>
-                    A minimalistic <here style={greenText}>cv creator</here>{" "}
+                    A minimalistic <span style={greenText}>cv creator</span>{" "}
                     where you enter your information, needs proper inputs, and
                     you can edit your information.
                   </p>
                   <div className="display" style={{ marginBottom: "40px" }}>
-                    <a
-                      href="https://joey-red.github.io/cv-project/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <video
-                        autoPlay
-                        loop
-                        src={CvProject}
-                        alt="cv creator"
-                        style={styles}
-                      />
-                    </a>
+                    {onLoadedData ? (
+                      <a
+                        href="https://joey-red.github.io/cv-project/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <video
+                          autoPlay
+                          loop
+                          src={CvProject}
+                          alt="cv creator"
+                          style={styles}
+                        />
+                      </a>
+                    ) : (
+                      <> Project is loading :)</>
+                    )}
                   </div>
                 </div>
                 <p style={description}>
