@@ -87,6 +87,14 @@ function Projects(props) {
                       target="_blank"
                       rel="noreferrer"
                     >
+                      {loadCount === 4 ? (
+                        <></>
+                      ) : (
+                        <>
+                          {" "}
+                          <div className="spinner"></div>
+                        </>
+                      )}
                       <video
                         autoPlay
                         loop
@@ -98,14 +106,6 @@ function Projects(props) {
                         }}
                       />
                     </a>
-                    {loadCount === 4 ? (
-                      <></>
-                    ) : (
-                      <>
-                        {" "}
-                        <div className="spinner"></div>
-                      </>
-                    )}
                   </div>
                 </div>
                 <div>
@@ -122,6 +122,14 @@ function Projects(props) {
                       target="_blank"
                       rel="noreferrer"
                     >
+                      {loadCount === 4 ? (
+                        <></>
+                      ) : (
+                        <>
+                          {" "}
+                          <div className="spinner"></div>
+                        </>
+                      )}
                       <video
                         autoPlay
                         loop
@@ -133,14 +141,6 @@ function Projects(props) {
                         }}
                       />
                     </a>
-                    {loadCount === 4 ? (
-                      <></>
-                    ) : (
-                      <>
-                        {" "}
-                        <div className="spinner"></div>
-                      </>
-                    )}
                   </div>
                 </div>
                 <div>
@@ -154,6 +154,14 @@ function Projects(props) {
                       target="_blank"
                       rel="noreferrer"
                     >
+                      {loadCount === 4 ? (
+                        <></>
+                      ) : (
+                        <>
+                          {" "}
+                          <div className="spinner"></div>
+                        </>
+                      )}
                       <video
                         autoPlay
                         loop
@@ -165,14 +173,6 @@ function Projects(props) {
                         }}
                       />
                     </a>
-                    {loadCount === 4 ? (
-                      <></>
-                    ) : (
-                      <>
-                        {" "}
-                        <div className="spinner"></div>
-                      </>
-                    )}
                   </div>
                 </div>
                 <div>
@@ -187,6 +187,14 @@ function Projects(props) {
                       target="_blank"
                       rel="noreferrer"
                     >
+                      {loadCount === 4 ? (
+                        <></>
+                      ) : (
+                        <>
+                          {" "}
+                          <div className="spinner"></div>
+                        </>
+                      )}
                       <video
                         autoPlay
                         loop
@@ -198,14 +206,6 @@ function Projects(props) {
                         }}
                       />
                     </a>
-                    {loadCount === 4 ? (
-                      <></>
-                    ) : (
-                      <>
-                        {" "}
-                        <div className="spinner"></div>
-                      </>
-                    )}
                   </div>
                 </div>
                 <p style={description}>
