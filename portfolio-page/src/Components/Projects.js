@@ -3,7 +3,6 @@ import CvProject from "./videos/cv.mp4";
 import RedditClone from "./videos/RedditSample.mp4";
 import restPage from "./videos/RestPage.mp4";
 import wheresPikachu from "./videos/WheresPikachu.mp4";
-
 function Projects(props) {
   const {
     displayHome,
@@ -13,7 +12,7 @@ function Projects(props) {
     displayAbout,
     setDisplayAbout,
   } = props;
-  const [videoLoaded, setVideoLoaded] = useState(false);
+
   let styles = {
     minWidth: "50vw",
     maxHeight: "40vh",
@@ -48,8 +47,13 @@ function Projects(props) {
       setDisplayAbout(false);
     }
   };
-  const onLoadedData = () => {
-    setVideoLoaded(true);
+  const [loadCount, setLoadCount] = useState(0);
+
+  const setVideoLoaded = () => {
+    if (loadCount < 4) {
+      setLoadCount(loadCount + 1);
+    } else {
+    }
   };
   return (
     <>
@@ -78,22 +82,29 @@ function Projects(props) {
                     communities and more.
                   </p>
                   <div className="display">
-                    {onLoadedData ? (
-                      <a
-                        href="https://joey-red.github.io/website-clone/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <video
-                          autoPlay
-                          loop
-                          src={RedditClone}
-                          alt="Reddit Clone"
-                          style={styles}
-                        />
-                      </a>
+                    <a
+                      href="https://joey-red.github.io/website-clone/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <video
+                        autoPlay
+                        loop
+                        src={RedditClone}
+                        alt="Reddit Clone"
+                        style={styles}
+                        onLoadedData={() => {
+                          setVideoLoaded();
+                        }}
+                      />
+                    </a>
+                    {loadCount === 4 ? (
+                      <></>
                     ) : (
-                      <> Project is loading :)</>
+                      <>
+                        {" "}
+                        <div className="spinner"></div>
+                      </>
                     )}
                   </div>
                 </div>
@@ -106,22 +117,29 @@ function Projects(props) {
                     the highscores!
                   </p>
                   <div className="display">
-                    {onLoadedData ? (
-                      <a
-                        href="https://joey-red.github.io/wheres-pikachu/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <video
-                          autoPlay
-                          loop
-                          src={wheresPikachu}
-                          alt="wheres waldo project"
-                          style={styles}
-                        />
-                      </a>
+                    <a
+                      href="https://joey-red.github.io/wheres-pikachu/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <video
+                        autoPlay
+                        loop
+                        src={wheresPikachu}
+                        alt="wheres waldo project"
+                        style={styles}
+                        onLoadedData={() => {
+                          setVideoLoaded();
+                        }}
+                      />
+                    </a>
+                    {loadCount === 4 ? (
+                      <></>
                     ) : (
-                      <> Project is loading :)</>
+                      <>
+                        {" "}
+                        <div className="spinner"></div>
+                      </>
                     )}
                   </div>
                 </div>
@@ -131,22 +149,29 @@ function Projects(props) {
                     information needed.
                   </p>
                   <div className="display">
-                    {onLoadedData ? (
-                      <a
-                        href="https://joey-red.github.io/restaurant-page/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <video
-                          autoPlay
-                          loop
-                          src={restPage}
-                          alt="restaurant page"
-                          style={styles}
-                        />
-                      </a>
+                    <a
+                      href="https://joey-red.github.io/restaurant-page/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <video
+                        autoPlay
+                        loop
+                        src={restPage}
+                        alt="restaurant page"
+                        style={styles}
+                        onLoadedData={() => {
+                          setVideoLoaded();
+                        }}
+                      />
+                    </a>
+                    {loadCount === 4 ? (
+                      <></>
                     ) : (
-                      <> Project is loading :)</>
+                      <>
+                        {" "}
+                        <div className="spinner"></div>
+                      </>
                     )}
                   </div>
                 </div>
@@ -157,22 +182,29 @@ function Projects(props) {
                     you can edit your information.
                   </p>
                   <div className="display" style={{ marginBottom: "40px" }}>
-                    {onLoadedData ? (
-                      <a
-                        href="https://joey-red.github.io/cv-project/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <video
-                          autoPlay
-                          loop
-                          src={CvProject}
-                          alt="cv creator"
-                          style={styles}
-                        />
-                      </a>
+                    <a
+                      href="https://joey-red.github.io/cv-project/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <video
+                        autoPlay
+                        loop
+                        src={CvProject}
+                        alt="cv creator"
+                        style={styles}
+                        onLoadedData={() => {
+                          setVideoLoaded();
+                        }}
+                      />
+                    </a>
+                    {loadCount === 4 ? (
+                      <></>
                     ) : (
-                      <> Project is loading :)</>
+                      <>
+                        {" "}
+                        <div className="spinner"></div>
+                      </>
                     )}
                   </div>
                 </div>
