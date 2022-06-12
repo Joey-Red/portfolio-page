@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio-page/static/css/main.478a7c19.css",
-    "main.js": "/portfolio-page/static/js/main.706bdf43.js",
+    "main.css": "/portfolio-page/static/css/main.7cf96f3c.css",
+    "main.js": "/portfolio-page/static/js/main.365a3164.js",
     "static/media/WheresPikachu.mp4": "/portfolio-page/static/media/WheresPikachu.364e2d2e6848b6d905ff.mp4",
     "static/media/RedditSample.mp4": "/portfolio-page/static/media/RedditSample.cb26076480106fa9dd18.mp4",
     "static/media/RestPage.mp4": "/portfolio-page/static/media/RestPage.a1d85ec0bc45fd8050fa.mp4",
     "static/media/cv.mp4": "/portfolio-page/static/media/cv.6acc7b7b50ddca022be0.mp4",
     "static/media/firebaselogo2.svg": "/portfolio-page/static/media/firebaselogo2.b97e2aaca59e87a7232623f44ed8db82.svg",
     "index.html": "/portfolio-page/index.html",
-    "main.478a7c19.css.map": "/portfolio-page/static/css/main.478a7c19.css.map",
-    "main.706bdf43.js.map": "/portfolio-page/static/js/main.706bdf43.js.map"
+    "main.7cf96f3c.css.map": "/portfolio-page/static/css/main.7cf96f3c.css.map",
+    "main.365a3164.js.map": "/portfolio-page/static/js/main.365a3164.js.map"
   },
   "entrypoints": [
-    "static/css/main.478a7c19.css",
-    "static/js/main.706bdf43.js"
+    "static/css/main.7cf96f3c.css",
+    "static/js/main.365a3164.js"
   ]
 }
