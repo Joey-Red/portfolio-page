@@ -18,7 +18,6 @@ function App() {
   const [cordX, setCordX] = useState([0]);
   const [cordY, setCordY] = useState([0]);
   sync("gradient");
-  sync("bubble");
   let toggleHome = () => {
     setDisplayHome(true);
     setDisplayProjects(false);

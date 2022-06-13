@@ -8,33 +8,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import firebaseLogo from "./img/firebaselogo2.svg";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 
 function About(props) {
-  const {
-    displayHome,
-    setDisplayHome,
-    displayProjects,
-    setDisplayProjects,
-    setDisplayAbout,
-    displayAbout,
-  } = props;
-  let nextPage = () => {
-    if (displayHome) {
-      setDisplayHome(false);
-      setDisplayProjects(true);
-      setDisplayAbout(false);
-    }
-    if (displayProjects) {
-      setDisplayHome(false);
-      setDisplayProjects(false);
-      setDisplayAbout(true);
-    }
-    if (displayAbout) {
-      setDisplayHome(true);
-      setDisplayProjects(false);
-      setDisplayAbout(false);
-    }
-  };
+  const { displayAbout } = props;
+
   let greenText = { color: "rgb(100, 216, 107)" };
 
   return (
@@ -112,12 +90,6 @@ function About(props) {
                   <span style={greenText}>joeyedalrymple@gmail.com</span>
                 </div>
                 <br />
-                <button
-                  className="nextButton returnHome"
-                  onClick={() => nextPage()}
-                >
-                  Home
-                </button>
               </div>
             </div>
           </div>
